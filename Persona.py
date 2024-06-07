@@ -3,12 +3,14 @@ class Persona:
     __apellidos: None
     __edad: None
     __oficio: None
+    __color_pelo : None
 
-    def __init__(self, nombre, apellidos, edad, oficio):
-        self._set_nombre(nombre)
-        self._set_apellidoso(apellidos)
-        self._set_edad(edad)
-        self._set_oficio(oficio)
+    def __init__(self, nombre, apellidos, edad, oficio, color_pelo):
+        self.set_nombre(nombre)
+        self.set_apellidos(apellidos)
+        self.set_edad(edad)
+        self.set_oficio(oficio)
+        self.set_color_pelo(color_pelo)
 
     def get_nombre(self):
         return self.__nombre
@@ -21,6 +23,9 @@ class Persona:
 
     def get_oficio(self):
         return self.__oficio
+    
+    def get_color_pelo(self):
+        return self.__color_pelo
 
     def set_nombre(self, nombre):
         if '-' in nombre or '_' in nombre:
@@ -41,6 +46,11 @@ class Persona:
         if oficio not in ["Agricultura", "Ganaderia", "Industria", "Turismo", "Servicios"]:
             raise Exception("El oficio no existe")
         self.__oficio = oficio
+
+    def set_color_pelo(self, color_pelo):
+        if color_pelo not in ["Rubio", "Castaño", "Moreno"]:
+            raise Exception("Color de pelo no valido")
+        self.__color_pelo = color_pelo
 
     def trabajar(self):
         self.set_edad(self.get_edad()+1)
