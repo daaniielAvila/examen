@@ -1,48 +1,49 @@
 class Persona:
-    __n: None
-    __a: None
-    __e: None
-    __o: None
+    __nombre: None
+    __apellidos: None
+    __edad: None
+    __oficio: None
 
-    def __init__(self, p1, p2, p3, p4):
-        self._set_nombre(p1)
-        self._set_apellidoso(p2)
-        self._set_edad(p3)
-        self._set_oficio(p4)
+    def __init__(self, nombre, apellidos, edad, oficio):
+        self._set_nombre(nombre)
+        self._set_apellidoso(apellidos)
+        self._set_edad(edad)
+        self._set_oficio(oficio)
 
     def get_nombre(self):
-        return self.__n
+        return self.__nombre
 
     def get_apellidos(self):
-        return self.__a
+        return self.__apellidos
 
     def get_edad(self):
-        return self.__e
+        return self.__edad
 
     def get_oficio(self):
-        return self.__o
+        return self.__oficio
 
-    def set_nombre(self, n1):
-        if '-' in n1 or '_' in n1:
+    def set_nombre(self, nombre):
+        if '-' in nombre or '_' in nombre:
             raise Exception("Los caracteres - o _ no son válidos")
-        self.__n = n1
+        self.__nombre = nombre
 
-    def set_apellidos(self, a1):
-        if '@' in a1 or '&' in a1:
+    def set_apellidos(self, apellidos):
+        if '@' in apellidos or '&' in apellidos:
             raise Exception("Los caracteres - o _ no son válidos")
-        self.__a = a1
+        self.__apellidos = apellidos
 
-    def set_edad(self, e1):
-        if 0 > e1 > 100:
+    def set_edad(self, edad):
+        if 0 > edad > 100:
             raise Exception("Edad no posible")
-        self.__e = e1
+        self.__edad = edad
 
-    def set_oficio(self, o1):
-        if o1 not in ["Agricultura", "Ganaderia", "Industria", "Turismo", "Servicios"]:
+    def set_oficio(self, oficio):
+        if oficio not in ["Agricultura", "Ganaderia", "Industria", "Turismo", "Servicios"]:
             raise Exception("El oficio no existe")
-        self.__o = o1
+        self.__oficio = oficio
 
     def trabajar(self):
         self.set_edad(self.get_edad()+1)
         print("Has aumentado tus habilidades y conocimiento durante este año de trabajo")
+
 
