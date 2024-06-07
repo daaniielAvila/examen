@@ -1,3 +1,6 @@
+"""
+Creamos la clase Persona con sus respectivos parametros privados
+"""
 class Persona:
     __nombre: None
     __apellidos: None
@@ -9,6 +12,9 @@ class Persona:
         self._set_apellidoso(apellidos)
         self._set_edad(edad)
         self._set_oficio(oficio)
+        """
+        Hacemos todos los getters 
+        """       
 
     def get_nombre(self):
         return self.__nombre
@@ -21,7 +27,9 @@ class Persona:
 
     def get_oficio(self):
         return self.__oficio
-
+    """
+    Hacemos las comprobaciones de cada parametro en los setters
+    """
     def set_nombre(self, nombre):
         if '-' in nombre or '_' in nombre:
             raise Exception("Los caracteres - o _ no son válidos")
